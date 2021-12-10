@@ -1,0 +1,41 @@
+html {
+    font-size: 100%;
+}
+/*  app name section starts */
+.app-name {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    align-items: center;
+}
+
+.app-name--item {
+    margin: 0px 2rem;
+    text-align: left;
+}
+
+/* app name section ends */
+
+
+/* login form section starts */
+
+.form-title {
+    font-size: 1.4rem;
+    color: #adb5bd;
+}
+
+.login-form-section {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.login-btn {
+    background-color: orangered;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+    width: 50%;
+}
+/* login form section ends */

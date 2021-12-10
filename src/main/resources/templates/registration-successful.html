@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head th:include="baseLayout :: head">
+    <title>REGISTRATION SUCCESSFUL</title>
+</head>
+<body>
+<section id="user-login">
+    <div class="container">
+        <div class="app-name">
+            <p class="lead app-name--item">Welcome to</p>
+            <p class="lead app-name--item">Redgate's</p>
+            <p class="h3 app-name--item">Feel Good Fund</p>
+        </div>
+
+        <div class="container">
+            <div class="login-form-section">
+                <span class="lead form-title text-center d-block">SUCCESSFUL REGISTRATION</span>
+
+                <div class="container d-flex flex-column justify-content-center align-items-center">
+                    <p class="lead" th:text="${user.username}"></p> <br>
+                    <p class="lead" th:text="${user.email}"></p> <br>
+                    <p class="lead" th:text="${user.password}"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+</body>
+</html>
