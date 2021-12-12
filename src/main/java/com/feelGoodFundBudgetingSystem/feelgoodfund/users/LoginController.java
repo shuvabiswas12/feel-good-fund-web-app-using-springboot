@@ -30,6 +30,7 @@ public class LoginController {
     public ModelAndView submitLogin(@ModelAttribute("user") Users user) throws ExecutionException, InterruptedException {
         Firestore dbFireStore = DBInstance.getDBInstance();
 
+//        ApiFuture<DocumentSnapshot> apiFuture = dbFireStore.collection("users").where;
         ApiFuture<DocumentSnapshot> apiFuture = dbFireStore.document("users/"+user.getEmail()).get();
         // .get() blocks on response
         DocumentSnapshot documentSnapshot = apiFuture.get();

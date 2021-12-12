@@ -37,14 +37,34 @@
                     <tr>
                         <td colspan="4">
                             <div class="d-flex">
-                                <button class="btn btn-secondary" style="flex-basis: 50%">Amount</button>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-secondary" style="flex-basis: 50%">Amount</button>
+
+                                <!-- Modal starts -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Amount details</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body" style="border-bottom: none;">
+                                                <p class="lead">Coming soon...!</p>
+                                            </div>
+<!--                                            <div class="modal-footer">-->
+<!--&lt;!&ndash;                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>&ndash;&gt;-->
+<!--                                            </div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- modal ends -->
+
                                 <button class="btn btn-danger" style="margin-left: 3%; flex-basis: 30%">Add</button>
                             </div>
                         </td>
                         <td colspan="2">
-                            <div class="d-flex justify-content-end">
-                                <button class="btn btn-secondary">SAVE</button>
-                            </div>
+<!--                            <div class="d-flex justify-content-end">-->
+<!--                                <button class="btn btn-secondary">SAVE</button>-->
+<!--                            </div>-->
                         </td>
                     </tr>
                     <tr>
