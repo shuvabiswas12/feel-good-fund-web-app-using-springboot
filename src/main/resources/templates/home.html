@@ -24,7 +24,11 @@
                         <li class="list-group-item item list-group-item-action"><a href="">Budget</a></li>
                         <li class="list-group-item item list-group-item-action"><a href="">History</a></li>
                         <li class="list-group-item item list-group-item-action"><a href="">About</a></li>
-                        <li class="list-group-item item list-group-item-action"><a href="">Sign out</a></li>
+                        <li class="list-group-item item list-group-item-action"><a href="">
+                            <form th:action="@{/logout}" method="post" class="d-flex justify-content-start">
+                                <input type="submit" value="Sign out" class="btn btn-light logout-btn">
+                            </form>
+                        </a></li>
                     </ul>
                     <div class="copyright d-flex justify-content-center">
                         <p class="lead">&copy;2021</p>
@@ -59,7 +63,9 @@
                                 </div>
                                 <!-- modal ends -->
 
-                                <button data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-danger" style="margin-left: 3%; flex-basis: 30%">Add</button>
+                                <button data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-danger"
+                                        style="margin-left: 3%; flex-basis: 30%">Add
+                                </button>
 
                                 <!-- Modal starts -->
                                 <div class="modal fade" id="addModal" tabindex="-1"

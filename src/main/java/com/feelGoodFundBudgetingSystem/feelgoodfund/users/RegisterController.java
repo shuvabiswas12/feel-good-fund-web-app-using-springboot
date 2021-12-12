@@ -8,13 +8,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.concurrent.ExecutionException;
 
 @Controller
 public class RegisterController {
 
     @GetMapping("/register")
-    public String showFormData(Model model) {
+    public String showFormData(Model model, HttpSession session) {
+        if (session.getAttribute("user") != null) {
+            return "redirect:/home";
+        }
+
         Users user = new Users();
         model.addAttribute("user", user);
         return "register";

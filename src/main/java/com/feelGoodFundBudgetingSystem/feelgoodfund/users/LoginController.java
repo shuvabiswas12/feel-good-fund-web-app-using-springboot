@@ -24,7 +24,11 @@ import java.util.concurrent.ExecutionException;
 public class LoginController {
 
     @GetMapping("/login")
-    public String login(Model model) {
+    public String login(Model model, HttpSession session) {
+        if (session.getAttribute("user") != null) {
+            return "redirect:/home";
+        }
+
         Users user = new Users();
         model.addAttribute("user", user);
         return "login";
