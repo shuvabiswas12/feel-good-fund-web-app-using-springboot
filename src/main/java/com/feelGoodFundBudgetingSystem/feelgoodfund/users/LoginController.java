@@ -23,12 +23,13 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public Users submitLogin(@ModelAttribute("user") Users user) throws ExecutionException, InterruptedException {
+    public String submitLogin(@ModelAttribute("user") Users user) throws ExecutionException, InterruptedException {
         Firestore dbFireStore = DBInstance.getDBInstance();
-        ApiFuture<DocumentSnapshot> apiFuture = dbFireStore.document("users/email").get();
-        // .get() blocks on response
-        DocumentSnapshot documentSnapshot = apiFuture.get();
-        System.out.println(documentSnapshot.toObject(Users.class));
-        return documentSnapshot.toObject(Users.class);
+//        ApiFuture<DocumentSnapshot> apiFuture = dbFireStore.document("users/email").get();
+//        // .get() blocks on response
+//        DocumentSnapshot documentSnapshot = apiFuture.get();
+//        System.out.println(documentSnapshot.toObject(Users.class));
+//        return documentSnapshot.toObject(Users.class);
+        return "redirect:/home";
     }
 }

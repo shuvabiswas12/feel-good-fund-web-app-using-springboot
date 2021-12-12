@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+<head th:include="baseLayout :: head">
+    <title>LOGIN</title>
+</head>
+<body>
+<section class="data-section">
+    <div class="container-fluid">
+        <div class="row d-flex">
+            <div class="navbar page-bar">
+                <p>Feel Good Fund</p>
+                <p>Account Type &nbsp; ADMIN/EMPLOYEE</p>
+                <div class="username">
+                    <span class="profile-icon"></span>
+                    <p class="name">User Name</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2 g-0">
+                <div class="left-panel d-flex flex-column justify-content-between">
+                    <ul class="list-group menu-list">
+                        <li class="list-group-item item list-group-item-action"><a href="">Dashboard</a></li>
+                        <li class="list-group-item item list-group-item-action"><a href="">Budget</a></li>
+                        <li class="list-group-item item list-group-item-action"><a href="">History</a></li>
+                        <li class="list-group-item item list-group-item-action"><a href="">About</a></li>
+                        <li class="list-group-item item list-group-item-action"><a href="">Sign out</a></li>
+                    </ul>
+                    <div class="copyright d-flex justify-content-center">
+                        <p class="lead">&copy;2021</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 g-0 flex-lg-shrink-1 right-panel">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <td colspan="4">
+                            <div class="d-flex">
+                                <button class="btn btn-secondary" style="flex-basis: 50%">Amount</button>
+                                <button class="btn btn-danger" style="margin-left: 3%; flex-basis: 30%">Add</button>
+                            </div>
+                        </td>
+                        <td colspan="2">
+                            <div class="d-flex justify-content-end">
+                                <button class="btn btn-secondary">SAVE</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Username</th>
+                        <th>ID</th>
+                        <th>Amount Added</th>
+                        <th>Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <div class="d-flex justify-content-end">
+                                <p class="h5 mt-1">Total Amount <span class="" style="border: 1px solid black; padding: 3px 10px;">XXX</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
