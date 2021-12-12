@@ -11,8 +11,8 @@
                 <p>Feel Good Fund</p>
                 <p>Account Type &nbsp; ADMIN/EMPLOYEE</p>
                 <div class="username">
-                    <span class="profile-icon"></span>
-                    <p class="name">User Name</p>
+                    <p class="profile-icon"></p>
+                    <p class="name" th:text="${user.username}"></p>
                 </div>
             </div>
         </div>
@@ -37,34 +37,71 @@
                     <tr>
                         <td colspan="4">
                             <div class="d-flex">
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-secondary" style="flex-basis: 50%">Amount</button>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                        class="btn btn-secondary" style="flex-basis: 50%">Amount
+                                </button>
 
                                 <!-- Modal starts -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">Amount details</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body" style="border-bottom: none;">
                                                 <p class="lead">Coming soon...!</p>
                                             </div>
-<!--                                            <div class="modal-footer">-->
-<!--&lt;!&ndash;                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>&ndash;&gt;-->
-<!--                                            </div>-->
                                         </div>
                                     </div>
                                 </div>
                                 <!-- modal ends -->
 
-                                <button class="btn btn-danger" style="margin-left: 3%; flex-basis: 30%">Add</button>
+                                <button data-bs-toggle="modal" data-bs-target="#addModal" class="btn btn-danger" style="margin-left: 3%; flex-basis: 30%">Add</button>
+
+                                <!-- Modal starts -->
+                                <div class="modal fade" id="addModal" tabindex="-1"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="addModalLabel">ADD amount</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body" style="border-bottom: none;">
+                                                <div class="container">
+                                                    <div class="login-form-section">
+
+                                                        <form method="post" th:action="@{/amount}"
+                                                              th:object="${budget}">
+                                                            <div class="form-floating mb-3">
+                                                                <input th:field="*{amount}" type="number"
+                                                                       class="form-control" id="floatingInput"
+                                                                       placeholder="enter your desired amount...">
+                                                                <label for="floatingInput">Amount</label>
+                                                            </div>
+                                                            <div class="d-flex justify-content-center">
+                                                                <button class="btn btn-warning login-btn mt-3">Add
+                                                                </button>
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- modal ends -->
                             </div>
                         </td>
                         <td colspan="2">
-<!--                            <div class="d-flex justify-content-end">-->
-<!--                                <button class="btn btn-secondary">SAVE</button>-->
-<!--                            </div>-->
+                            <!--                            <div class="d-flex justify-content-end">-->
+                            <!--                                <button class="btn btn-secondary">SAVE</button>-->
+                            <!--                            </div>-->
                         </td>
                     </tr>
                     <tr>
@@ -88,7 +125,9 @@
                     <tr>
                         <td colspan="6">
                             <div class="d-flex justify-content-end">
-                                <p class="h5 mt-1">Total Amount <span class="" style="border: 1px solid black; padding: 3px 10px;">XXX</span></p>
+                                <p class="h5 mt-1">Total Amount <span class=""
+                                                                      style="border: 1px solid black; padding: 3px 10px;">XXX</span>
+                                </p>
                             </div>
                         </td>
                     </tr>
