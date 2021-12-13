@@ -50,9 +50,12 @@ public class LoginController {
                 request.getSession().setAttribute("team", TeamController.team1);
             } else if (user.getTeamName() == "Team-2") {
                 request.getSession().setAttribute("team", TeamController.team2);
-            } else {
+            } else if (user.getTeamName() == "Team-3") {
                 request.getSession().setAttribute("team", TeamController.team3);
+            } else {
+                request.getSession().setAttribute("team", TeamController.team4);
             }
+
 
             return "redirect:/home";
         }

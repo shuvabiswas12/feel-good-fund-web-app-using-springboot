@@ -53,8 +53,11 @@ public class HomeController {
                 } else if (TeamController.team2.getTeamName().equals(user.getTeamName())) {
                     team = TeamController.team2;
                     totalAmountOfATeam += Integer.parseInt(budget.getAmount());
-                } else {
+                } else if (TeamController.team3.getTeamName().equals(user.getTeamName())) {
                     team = TeamController.team3;
+                    totalAmountOfATeam += Integer.parseInt(budget.getAmount());
+                } else {
+                    team = TeamController.team4;
                     totalAmountOfATeam += Integer.parseInt(budget.getAmount());
                 }
             }
