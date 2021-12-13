@@ -9,8 +9,8 @@
         <div class="row d-flex">
             <div class="navbar page-bar">
                 <p>Feel Good Fund</p>
-<!--                <p th:text="'Account Type ADMIN/EMPLOYEE |' ${user.teamName}': 9000'"></p>-->
-                <p class="h6" th:text="'ADMIN/EMPLOYEE &nbsp; | &nbsp; ' + ${user.teamName} + ' : ' + ${team.budget}"></p>
+                <p class="h6"
+                   th:text="'ADMIN/EMPLOYEE &nbsp; | &nbsp; ' + ${user.teamName} + ' : ' + ${team.budget}"></p>
                 <div class="username">
                     <p class="profile-icon"></p>
                     <p class="name" th:text="${user.username}"></p>
@@ -90,13 +90,13 @@
                                         style="margin-left: 3%; flex-basis: 30%">Add
                                 </button>
 
-                                <!-- Modal starts -->
+                                <!-- Amount add Modal starts -->
                                 <div class="modal fade" id="addModal" tabindex="-1"
                                      aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="addModalLabel">ADD amount</h5>
+                                                <h5 class="modal-title" id="addModalLabel">ADD / UPDATE amount</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                             </div>
@@ -112,6 +112,12 @@
                                                                        placeholder="enter your desired amount...">
                                                                 <label for="floatingInput">Amount</label>
                                                             </div>
+                                                            <div class="form-floating mb-3">
+                                                                <input th:field="*{description}" type="text"
+                                                                       class="form-control" id="descriptionInput"
+                                                                       placeholder="enter your desired amount...">
+                                                                <label for="floatingInput">Description</label>
+                                                            </div>
                                                             <div class="d-flex justify-content-center">
                                                                 <button class="btn btn-warning login-btn mt-3">Add
                                                                 </button>
@@ -124,7 +130,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- modal ends -->
+                                <!-- Amount modal ends -->
                             </div>
                         </td>
                         <td colspan="2">
@@ -139,13 +145,34 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="budget: ${budgetsData}">
+                    <tr th:each="budget: ${budgetsData}" data-bs-toggle="modal"
+                        th:data-bs-target="'#' + ${budget.username} + 'Modal'">
+
+                        <!-- description Modal starts -->
+                        <div class="modal fade" th:id="${budget.username} + 'Modal'" tabindex="-1"
+                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" th:id="${budget.username} + 'ModalLabel'">Cost reason</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" style="border-bottom: none;">
+                                        <p class="lead" th:text="${budget.description}"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- description modal ends -->
+
                         <td th:text="${budget.date}"></td>
                         <td th:text="${budget.time}"></td>
                         <td th:text="${budget.username}"></td>
                         <td th:text="${budget.teamName}"></td>
                         <td th:text="${budget.amount}"></td>
                     </tr>
+
                     <tr>
                         <td colspan="4"><p class="h5" style="text-align: right;">Total Amount</p></td>
                         <td>

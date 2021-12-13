@@ -6,6 +6,7 @@ public class Budget {
     private String date;
     private String time;
     private String teamName;
+    private String description;
 
     public Budget() {
 
@@ -33,6 +34,15 @@ public class Budget {
         this.date = date;
         this.time = time;
         this.teamName = teamName;
+    }
+
+    public Budget(String amount, String username, String date, String time, String teamName, String description) {
+        this.amount = amount;
+        this.username = username;
+        this.date = date;
+        this.time = time;
+        this.teamName = teamName;
+        this.description = description;
     }
 
     public String getTeamName() {
@@ -75,6 +85,14 @@ public class Budget {
         this.time = time;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "Budget{" +
@@ -83,6 +101,7 @@ public class Budget {
                 ", date='" + date + '\'' +
                 ", time='" + time + '\'' +
                 ", teamName='" + teamName + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }
