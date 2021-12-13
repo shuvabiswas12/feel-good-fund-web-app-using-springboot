@@ -115,23 +115,21 @@
                         <th>Time</th>
                         <th>Username</th>
                         <th>ID</th>
-                        <th>Amount Added</th>
                         <th>Amount</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr th:each="budget: ${budgetsData}">
+                        <td th:text="${budget.date}"></td>
+                        <td th:text="${budget.time}"></td>
+                        <td th:text="${budget.username}"></td>
+                        <td>#</td>
+                        <td th:text="${budget.amount}"></td>
                     </tr>
                     <tr>
-                        <td colspan="6">
+                        <td colspan="5">
                             <div class="d-flex justify-content-end">
-                                <p class="h5 mt-1">Total Amount <span class=""
+                                <p class="h5 mt-1">Total Amount <span th:text="${totalAmount}" class=""
                                                                       style="border: 1px solid black; padding: 3px 10px;">XXX</span>
                                 </p>
                             </div>

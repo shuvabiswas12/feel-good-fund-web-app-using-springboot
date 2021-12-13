@@ -4,6 +4,7 @@ import com.feelGoodFundBudgetingSystem.feelgoodfund.DBInstance;
 import com.feelGoodFundBudgetingSystem.feelgoodfund.users.Users;
 import com.google.api.client.util.DateTime;
 import com.google.api.core.ApiFuture;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
 import org.springframework.stereotype.Controller;
@@ -37,6 +38,8 @@ public class BudgetController {
         String formattedTime = timeFormat.format(new Date().getTime());
         System.out.println(formattedTime);
         budget.setTime(formattedTime);
+
+//        budget.setTime(Timestamp.now());
 
         Users user = (Users) session.getAttribute("user");
         budget.setUsername(user.getUsername());

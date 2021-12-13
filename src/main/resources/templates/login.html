@@ -18,7 +18,8 @@
                 <div class="bg-light" th:if="${message}">
                     <p class="text-danger text-center h6 p-3" th:text="${message}"></p>
                 </div>
-                <form method="post" th:action="@{/login}" th:object="${user}">
+
+                <form method="post" th:action="@{/login}" th:object="${user}" id="submit">
                     <div class="form-floating mb-3">
                         <input th:field="*{email}" type="email" class="form-control" id="floatingInput"
                                placeholder="name@example.com">
@@ -42,5 +43,6 @@
 
     </div>
 </section>
+
 </body>
 </html>
