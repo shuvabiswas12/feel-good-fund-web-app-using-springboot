@@ -133,7 +133,10 @@
                                 <!-- Amount modal ends -->
                             </div>
                         </td>
-                        <td colspan="2">
+                        <td class="bg-light" colspan="2">
+                            <div class="">
+                                <span>Click on a table-row for showing cost reason!</span>
+                            </div>
                         </td>
                     </tr>
                     <tr>
@@ -154,7 +157,8 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" th:id="${budget.username} + 'ModalLabel'">Cost reason</h5>
+                                        <h5 class="modal-title" th:id="${budget.username} + 'ModalLabel'">Cost
+                                            reason</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                     </div>
