@@ -6,11 +6,8 @@ import com.google.firebase.FirebaseOptions;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Objects;
 
 @SpringBootApplication
 public class FeelgoodfundApplication {
@@ -37,7 +34,7 @@ public class FeelgoodfundApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(FeelgoodfundApplication.class, args);
-        FeelgoodfundApplication.initDB();
+        initDB();
     }
 
 }
