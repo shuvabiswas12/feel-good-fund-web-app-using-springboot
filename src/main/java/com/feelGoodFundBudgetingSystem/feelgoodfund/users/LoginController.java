@@ -2,6 +2,8 @@ package com.feelGoodFundBudgetingSystem.feelgoodfund.users;
 
 import com.feelGoodFundBudgetingSystem.feelgoodfund.DBInstance;
 import com.feelGoodFundBudgetingSystem.feelgoodfund.FeelgoodfundApplication;
+import com.feelGoodFundBudgetingSystem.feelgoodfund.team.Team;
+import com.feelGoodFundBudgetingSystem.feelgoodfund.team.TeamController;
 import com.google.api.Http;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.DocumentSnapshot;
@@ -43,6 +45,15 @@ public class LoginController {
         if (user.getPassword().toString().equals(foundExistingUser.getPassword().toString())) {
             System.out.println("Credentials matched");
             request.getSession().setAttribute("user", foundExistingUser);
+
+            if (user.getTeamName() == "Team-1") {
+                request.getSession().setAttribute("team", TeamController.team1);
+            } else if (user.getTeamName() == "Team-2") {
+                request.getSession().setAttribute("team", TeamController.team2);
+            } else {
+                request.getSession().setAttribute("team", TeamController.team3);
+            }
+
             return "redirect:/home";
         }
 

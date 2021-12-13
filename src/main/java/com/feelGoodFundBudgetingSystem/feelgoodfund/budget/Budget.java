@@ -1,18 +1,11 @@
 package com.feelGoodFundBudgetingSystem.feelgoodfund.budget;
 
-import com.google.cloud.Timestamp;
-
-import java.sql.Time;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class Budget {
     private String amount;
     private String username;
-    private String id;
     private String date;
     private String time;
+    private String teamName;
 
     public Budget() {
 
@@ -27,12 +20,27 @@ public class Budget {
         this.username = username;
     }
 
-    public Budget(String amount, String username, String id, String date, String time) {
+    public Budget(String amount, String username, String date, String time) {
         this.amount = amount;
         this.username = username;
-        this.id = id;
         this.date = date;
         this.time = time;
+    }
+
+    public Budget(String amount, String username, String date, String time, String teamName) {
+        this.amount = amount;
+        this.username = username;
+        this.date = date;
+        this.time = time;
+        this.teamName = teamName;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 
     public String getAmount() {
@@ -51,24 +59,12 @@ public class Budget {
         this.username = username;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getDate() {
         return date;
     }
 
     public void setDate(String date) {
-        if (date.isEmpty()) {
-
-        }
         this.date = date;
-
     }
 
     public String getTime() {
@@ -82,11 +78,12 @@ public class Budget {
     @Override
     public String toString() {
         return "Budget{" +
-                "amount=" + amount +
+                "amount='" + amount + '\'' +
                 ", username='" + username + '\'' +
-                ", id=" + id +
                 ", date='" + date + '\'' +
                 ", time='" + time + '\'' +
+                ", teamName='" + teamName + '\'' +
                 '}';
     }
 }
+

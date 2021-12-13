@@ -9,7 +9,8 @@
         <div class="row d-flex">
             <div class="navbar page-bar">
                 <p>Feel Good Fund</p>
-                <p>Account Type &nbsp; ADMIN/EMPLOYEE</p>
+<!--                <p th:text="'Account Type ADMIN/EMPLOYEE |' ${user.teamName}': 9000'"></p>-->
+                <p class="h6" th:text="'ADMIN/EMPLOYEE &nbsp; | &nbsp; ' + ${user.teamName} + ' : ' + ${team.budget}"></p>
                 <div class="username">
                     <p class="profile-icon"></p>
                     <p class="name" th:text="${user.username}"></p>
@@ -61,7 +62,7 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <td colspan="4">
+                        <td colspan="3">
                             <div class="d-flex">
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
                                         class="btn btn-secondary" style="flex-basis: 50%">Amount
@@ -127,9 +128,6 @@
                             </div>
                         </td>
                         <td colspan="2">
-                            <!--                            <div class="d-flex justify-content-end">-->
-                            <!--                                <button class="btn btn-secondary">SAVE</button>-->
-                            <!--                            </div>-->
                         </td>
                     </tr>
                     <tr>
@@ -145,16 +143,14 @@
                         <td th:text="${budget.date}"></td>
                         <td th:text="${budget.time}"></td>
                         <td th:text="${budget.username}"></td>
-                        <td>#</td>
+                        <td th:text="${budget.teamName}"></td>
                         <td th:text="${budget.amount}"></td>
                     </tr>
                     <tr>
-                        <td colspan="5">
-                            <div class="d-flex justify-content-end">
-                                <p class="h5 mt-1">Total Amount <span th:text="${totalAmount}" class=""
-                                                                      style="border: 1px solid black; padding: 3px 10px;">XXX</span>
-                                </p>
-                            </div>
+                        <td colspan="4"><p class="h5" style="text-align: right;">Total Amount</p></td>
+                        <td>
+                            <span th:text="${totalAmount}" class="h5"
+                                  style="border: 1px solid black; padding: 3px 10px;">XXX</span>
                         </td>
                     </tr>
                     </tbody>

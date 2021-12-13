@@ -6,15 +6,17 @@ public class Users {
     private String username;
     private String email;
     private String password;
+    private String teamName;
 
     public Users() {
     }
 
     // registering
-    public Users(String username, String email, String password) {
+    public Users(String username, String email, String password, String teamName) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.teamName = teamName;
     }
 
     // login
@@ -24,11 +26,12 @@ public class Users {
     }
 
     // get the values from database
-    public Users(String _id, String username, String email, String password) {
+    public Users(String _id, String username, String email, String password, String teamName) {
         this._id = _id;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.teamName = teamName;
     }
 
     public String get_id() {
@@ -63,6 +66,14 @@ public class Users {
         this.password = password;
     }
 
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
     @Override
     public String toString() {
         return "Users{" +
@@ -70,6 +81,7 @@ public class Users {
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", teamName='" + teamName + '\'' +
                 '}';
     }
 }
