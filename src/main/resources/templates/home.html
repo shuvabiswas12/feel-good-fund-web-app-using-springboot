@@ -20,13 +20,13 @@
             <div class="col-2 g-0">
                 <div class="left-panel d-flex flex-column justify-content-between">
                     <ul class="list-group menu-list">
-                        <li class="list-group-item item list-group-item-action"><a href="">Dashboard</a></li>
+                        <li class="list-group-item item list-group-item-action"><a th:href="@{/home}">Dashboard</a></li>
                         <li class="list-group-item item list-group-item-action"><a href="" data-bs-toggle="modal"
                                                                                    data-bs-target="#budgetModal">Budget</a>
 
                         </li>
                         <li class="list-group-item item list-group-item-action"><a href="">History</a></li>
-                        <li class="list-group-item item list-group-item-action"><a href="">About</a></li>
+                        <li class="list-group-item item list-group-item-action"><a th:href="@{/about}">About</a></li>
                         <li class="list-group-item item list-group-item-action"><a href="">
                             <form th:action="@{/logout}" method="post" class="d-flex justify-content-start">
                                 <input type="submit" value="Sign out" class="btn btn-light logout-btn">
