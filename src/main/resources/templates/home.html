@@ -21,7 +21,10 @@
                 <div class="left-panel d-flex flex-column justify-content-between">
                     <ul class="list-group menu-list">
                         <li class="list-group-item item list-group-item-action"><a href="">Dashboard</a></li>
-                        <li class="list-group-item item list-group-item-action"><a href="">Budget</a></li>
+                        <li class="list-group-item item list-group-item-action"><a href="" data-bs-toggle="modal"
+                                                                                   data-bs-target="#budgetModal">Budget</a>
+
+                        </li>
                         <li class="list-group-item item list-group-item-action"><a href="">History</a></li>
                         <li class="list-group-item item list-group-item-action"><a href="">About</a></li>
                         <li class="list-group-item item list-group-item-action"><a href="">
@@ -36,6 +39,25 @@
                 </div>
             </div>
             <div class="col-10 g-0 flex-lg-shrink-1 right-panel">
+
+                <!-- Budget Modal starts -->
+                <div class="modal fade" id="budgetModal" tabindex="-1"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="budgetModalLabel">Budget details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" style="border-bottom: none;">
+                                <p class="lead">Coming soon...!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- budget modal ends -->
+
                 <table class="table table-hover">
                     <thead>
                     <tr>
